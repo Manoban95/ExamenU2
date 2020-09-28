@@ -92,7 +92,7 @@
   		  	console.log(year)
 
   		  		$.ajax({
-  		  			url: 'proceso.php',
+  		  			url: 'guardar.php',
   		  			data: {email : email,
   		  				   password : password,
   		  				   year : year},
@@ -104,7 +104,22 @@
   		  		})
   		  	
   		  })
-		});
+		
+
+  		  $("#mostrar_info").click(function(){
+
+  		  		$.ajax({
+  		  			url: 'consultar.php',
+  		  			type: 'POST',
+  		  			dataType: 'text',
+  		  			success: function(r){
+  		  				$('#content_table').html(r)
+  		  			}
+  		  		})
+  		  	
+  		  })
+
+  		  });
 	 
 
 </script>
